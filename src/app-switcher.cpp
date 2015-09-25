@@ -35,8 +35,8 @@ AppSwitcher::AppSwitcher(QWidget *parent):
     setItemDelegate(new AppItemDelegate(this));
     setContentsMargins(5, 5, 5, 5);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_timer = new QTimer();
-    m_timer->setInterval(100);
+    m_timer = new QTimer(this);
+    m_timer->setInterval(200);
     m_timer->setSingleShot(true);
     connect(m_timer, &QTimer::timeout, this, &AppSwitcher::timer);
 }
