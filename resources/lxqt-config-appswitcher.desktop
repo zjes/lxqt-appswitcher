@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Application switcher
+Comment=Configure application switcher
+Exec=lxqt-config-appswitcher
+Icon=input-keyboard
+Categories=Qt;Settings;HardwareSettings;DesktopSettings;LXQt;
+OnlyShowIn=LXQt;
+
