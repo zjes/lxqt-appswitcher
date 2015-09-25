@@ -17,8 +17,8 @@ AppSwitcher::AppSwitcher(QWidget *parent):
 {
     setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint);
     setObjectName("AppSwitcher");
-    QString shortcut = "Control+Next";
-    //QString shortcut = "Alt+Tab";
+    //QString shortcut = "Control+Next";
+    QString shortcut = "Alt+Tab";
     m_globalShortcut = GlobalKeyShortcut::Client::instance()->addAction(shortcut, "/app_switcher/switch", tr("Switch applications"), this);
 
     connect(m_globalShortcut, &GlobalKeyShortcut::Action::activated, [this]{
