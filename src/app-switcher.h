@@ -16,6 +16,7 @@ protected:
     virtual void currentChanged(const QModelIndex &current, const QModelIndex &previous);
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *event);
+    virtual void closeEvent(QCloseEvent *);
 private:
     void showSwitcher();
     void selectNextItem();

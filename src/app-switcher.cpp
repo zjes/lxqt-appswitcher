@@ -17,8 +17,8 @@ AppSwitcher::AppSwitcher(QWidget *parent):
 {
     setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint);
     setObjectName("AppSwitcher");
-    //QString shortcut = "Control+Next";
-    QString shortcut = "Alt+Tab";
+    QString shortcut = "Control+Next";
+    //QString shortcut = "Alt+Tab";
     m_globalShortcut = GlobalKeyShortcut::Client::instance()->addAction(shortcut, "/app_switcher/switch", tr("Switch applications"), this);
 
     connect(m_globalShortcut, &GlobalKeyShortcut::Action::activated, [this]{
@@ -36,11 +36,10 @@ AppSwitcher::AppSwitcher(QWidget *parent):
     setContentsMargins(5, 5, 5, 5);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     m_timer = new QTimer(this);
-    m_timer->setInterval(200);
+    m_timer->setInterval(100);
     m_timer->setSingleShot(true);
     connect(m_timer, &QTimer::timeout, this, &AppSwitcher::timer);
 }
-
 
 void AppSwitcher::showSwitcher()
 {
@@ -77,7 +76,7 @@ void AppSwitcher::selectNextItem()
     if(++m_current >= model()->rowCount())
         m_current = 0;
     setCurrentIndex(model()->index(m_current, 0));
-    setFocus();
+    //setFocus();
 }
 
 void AppSwitcher::currentChanged(const QModelIndex &/*current*/, const QModelIndex &/*previous*/)
@@ -93,8 +92,8 @@ void AppSwitcher::keyPressEvent(QKeyEvent *event)
 void AppSwitcher::keyReleaseEvent(QKeyEvent *event)
 {
     if (event->modifiers() == 0){
-        m_timer->stop();
-        KWindowSystem::activateWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
+        qDebug() << "release";
+        KWindowSystem::forceActiveWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
         close();
     }
     QWidget::keyReleaseEvent(event);
@@ -103,7 +102,15 @@ void AppSwitcher::keyReleaseEvent(QKeyEvent *event)
 void AppSwitcher::timer()
 {
     if (QApplication::queryKeyboardModifiers() == Qt::NoModifier){
-        KWindowSystem::activateWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
+        qDebug() << "timer";
+        KWindowSystem::forceActiveWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
         close();
+    } else {
+        m_timer->start();
     }
+}
+
+void AppSwitcher::closeEvent(QCloseEvent *)
+{
+    m_timer->stop();
 }
