@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8.11)
 cmake_policy(VERSION 2.8)
 
+include(GNUInstallDirs)
 project(lxqt-appswitcher)
 
 find_package(Qt5 COMPONENTS Core Widgets)
@@ -32,3 +33,18 @@ target_link_libraries(${PROJECT_NAME}
 )
 
 add_subdirectory(config)
+
+install(TARGETS
+    ${PROJECT_NAME}
+    DESTINATION "${CMAKE_INSTALL_BINDIR}"
+)
+
+install(FILES
+    resources/lxqt-config-appswitcher.desktop
+    DESTINATION "${LXQT_DATA_DIR}/applications"
+)
+
+install(DIRECTORY
+    resources/themes
+    DESTINATION "${LXQT_SHARE_DIR}"
+)

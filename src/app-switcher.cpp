@@ -4,6 +4,7 @@
 #include <LXQtGlobalKeys/Action>
 #include <LXQtGlobalKeys/Client>
 #include <QKeyEvent>
+#include <QTimer>
 #include <kwindowsystem.h>
 
 #include "app-switcher.h"
@@ -34,11 +35,16 @@ AppSwitcher::AppSwitcher(QWidget *parent):
     setItemDelegate(new AppItemDelegate(this));
     setContentsMargins(5, 5, 5, 5);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    m_timer = new QTimer();
+    m_timer->setInterval(100);
+    m_timer->setSingleShot(true);
+    connect(m_timer, &QTimer::timeout, this, &AppSwitcher::timer);
 }
 
 
 void AppSwitcher::showSwitcher()
 {
+    m_timer->start();
     Settings::instance().sync();
     setModel(new AppModel(this));
     dynamic_cast<AppItemDelegate*>(itemDelegate())->init();
@@ -67,6 +73,7 @@ void AppSwitcher::showSwitcher()
 
 void AppSwitcher::selectNextItem()
 {
+    m_timer->start();
     if(++m_current >= model()->rowCount())
         m_current = 0;
     setCurrentIndex(model()->index(m_current, 0));
@@ -86,8 +93,17 @@ void AppSwitcher::keyPressEvent(QKeyEvent *event)
 void AppSwitcher::keyReleaseEvent(QKeyEvent *event)
 {
     if (event->modifiers() == 0){
+        m_timer->stop();
         KWindowSystem::activateWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
         close();
     }
     QWidget::keyReleaseEvent(event);
+}
+
+void AppSwitcher::timer()
+{
+    if (QApplication::queryKeyboardModifiers() == Qt::NoModifier){
+        KWindowSystem::activateWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
+        close();
+    }
 }

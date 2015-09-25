@@ -15,3 +15,7 @@ target_link_libraries(lxqt-config-appswitcher
     lxqt
 )
 
+install(TARGETS
+    lxqt-config-appswitcher
+    DESTINATION "${CMAKE_INSTALL_BINDIR}"
+)

@@ -19,7 +19,9 @@ protected:
 private:
     void showSwitcher();
     void selectNextItem();
+    void timer();
 private:
     GlobalKeyShortcut::Action *m_globalShortcut;
+    QTimer *m_timer;
     int m_current = 0;
 };
