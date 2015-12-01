@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=LXQt Application Switcher
+GenericName=Window Switcher
+Comment=List of windows displayed while cycling by keyboard shortcut.
+TryExec=lxqt-appswitcher
+Exec=lxqt-appswitcher
+
+OnlyShowIn=LXQt;
+X-LXQt-Module=true
+Hidden=true

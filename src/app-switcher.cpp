@@ -17,19 +17,22 @@ AppSwitcher::AppSwitcher(QWidget *parent):
 {
     setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint);
     setObjectName("AppSwitcher");
-    //QString shortcut = "Control+Next";
-    QString shortcut = "Alt+Tab";
-    m_globalShortcut = GlobalKeyShortcut::Client::instance()->addAction(shortcut, "/app_switcher/switch", tr("Switch applications"), this);
+
+    m_globalShortcut  = GlobalKeyShortcut::Client::instance()->addAction("Alt+Tab", "/app_switcher/switch", tr("Switch applications"), this);
+    m_globalRShortcut = GlobalKeyShortcut::Client::instance()->addAction("Shift+Alt+Tab", "/app_switcher/rswitch", tr("Reverse switch applications"), this);
 
     connect(m_globalShortcut, &GlobalKeyShortcut::Action::activated, [this]{
         if (isVisible())
-            selectNextItem();
+            selectItem();
         else
             showSwitcher();
     });
 
-    connect(this, &AppSwitcher::activated, [](const QModelIndex& index){
-        qDebug() << index.row();
+    connect(m_globalRShortcut, &GlobalKeyShortcut::Action::activated, [this]{
+        if (isVisible())
+            selectItem(false);
+        else
+            showSwitcher(false);
     });
 
     setItemDelegate(new AppItemDelegate(this));
@@ -41,7 +44,7 @@ AppSwitcher::AppSwitcher(QWidget *parent):
     connect(m_timer, &QTimer::timeout, this, &AppSwitcher::timer);
 }
 
-void AppSwitcher::showSwitcher()
+void AppSwitcher::showSwitcher(bool forward)
 {
     m_timer->start();
     Settings::instance().sync();
@@ -66,33 +69,25 @@ void AppSwitcher::showSwitcher()
 
     QRect active = QApplication::desktop()->screenGeometry(QCursor::pos());
     move(active.left()+active.width()/2 - width() / 2, active.top()+active.height()/2 - height() / 2);
-    selectNextItem();
+    selectItem(forward);
     show();
 }
 
-void AppSwitcher::selectNextItem()
+void AppSwitcher::selectItem(bool forward)
 {
     m_timer->start();
-    if(++m_current >= model()->rowCount())
+    m_current += forward ? 1 : -1;
+    if(m_current >= model()->rowCount())
         m_current = 0;
+    if(m_current < 0)
+        m_current = model()->rowCount()-1;
+
     setCurrentIndex(model()->index(m_current, 0));
-    //setFocus();
-}
-
-void AppSwitcher::currentChanged(const QModelIndex &/*current*/, const QModelIndex &/*previous*/)
-{
-    //qDebug() << "current" << current.row();
-}
-
-void AppSwitcher::keyPressEvent(QKeyEvent *event)
-{
-    QWidget::keyPressEvent(event);
 }
 
 void AppSwitcher::keyReleaseEvent(QKeyEvent *event)
 {
     if (event->modifiers() == 0){
-        qDebug() << "release";
         KWindowSystem::forceActiveWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
         close();
     }
@@ -102,7 +97,6 @@ void AppSwitcher::keyReleaseEvent(QKeyEvent *event)
 void AppSwitcher::timer()
 {
     if (QApplication::queryKeyboardModifiers() == Qt::NoModifier){
-        qDebug() << "timer";
         KWindowSystem::forceActiveWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
         close();
     } else {

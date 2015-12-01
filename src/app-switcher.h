@@ -13,16 +13,15 @@ class AppSwitcher: public QListView
 public:
     AppSwitcher(QWidget *parent);
 protected:
-    virtual void currentChanged(const QModelIndex &current, const QModelIndex &previous);
-    void keyPressEvent(QKeyEvent *event);
-    void keyReleaseEvent(QKeyEvent *event);
-    virtual void closeEvent(QCloseEvent *);
+    void keyReleaseEvent(QKeyEvent *event) override;
+    void closeEvent(QCloseEvent *) override;
 private:
-    void showSwitcher();
-    void selectNextItem();
+    void showSwitcher(bool forward = true);
+    void selectItem(bool forward = true);
     void timer();
 private:
     GlobalKeyShortcut::Action *m_globalShortcut;
+    GlobalKeyShortcut::Action *m_globalRShortcut;
     QTimer *m_timer;
     int m_current = 0;
 };

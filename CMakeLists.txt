@@ -44,6 +44,11 @@ install(FILES
     DESTINATION "${LXQT_DATA_DIR}/applications"
 )
 
+install(FILES
+    resources/lxqt-appswitcher.desktop
+    DESTINATION "${LXQT_ETC_XDG_DIR}/autostart"
+)
+
 install(DIRECTORY
     resources/themes
     DESTINATION "${LXQT_SHARE_DIR}"
