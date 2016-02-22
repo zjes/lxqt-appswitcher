@@ -19,6 +19,7 @@ private:
     void showSwitcher(bool forward = true);
     void selectItem(bool forward = true);
     void timer();
+    void activateWindow(WId id);
 private:
     GlobalKeyShortcut::Action *m_globalShortcut;
     GlobalKeyShortcut::Action *m_globalRShortcut;

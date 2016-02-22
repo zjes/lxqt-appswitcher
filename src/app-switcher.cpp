@@ -85,10 +85,20 @@ void AppSwitcher::selectItem(bool forward)
     setCurrentIndex(model()->index(m_current, 0));
 }
 
+void AppSwitcher::activateWindow(WId id)
+{
+    KWindowInfo info(id, NET::WMDesktop);
+
+    if (KWindowSystem::currentDesktop() != info.desktop())
+        KWindowSystem::setCurrentDesktop(info.desktop());
+
+    KWindowSystem::forceActiveWindow(id);
+}
+
 void AppSwitcher::keyReleaseEvent(QKeyEvent *event)
 {
     if (event->modifiers() == 0){
-        KWindowSystem::forceActiveWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
+        activateWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
         close();
     }
     QWidget::keyReleaseEvent(event);
@@ -97,7 +107,7 @@ void AppSwitcher::keyReleaseEvent(QKeyEvent *event)
 void AppSwitcher::timer()
 {
     if (QApplication::queryKeyboardModifiers() == Qt::NoModifier){
-        KWindowSystem::forceActiveWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
+        activateWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
         close();
     } else {
         m_timer->start();
