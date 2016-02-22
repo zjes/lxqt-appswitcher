@@ -46,17 +46,14 @@ AppSwitcher::AppSwitcher(QWidget *parent):
 
 void AppSwitcher::showSwitcher(bool forward)
 {
-    m_timer->start();
     Settings::instance().sync();
     setModel(new AppModel(this));
     dynamic_cast<AppItemDelegate*>(itemDelegate())->init();
 
     m_current = 0;
 
-    if (!model()->rowCount()){
-        m_timer->stop();
+    if (!model()->rowCount())
         return;
-    }
 
     int w = 0;
     int h = 0;
@@ -75,6 +72,7 @@ void AppSwitcher::showSwitcher(bool forward)
     QRect active = QApplication::desktop()->screenGeometry(QCursor::pos());
     move(active.left()+active.width()/2 - width() / 2, active.top()+active.height()/2 - height() / 2);
     selectItem(forward);
+    m_timer->start();
     show();
 }
 
