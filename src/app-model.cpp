@@ -33,6 +33,9 @@ int AppModel::rowCount(const QModelIndex &/*parent*/) const
 
 QVariant AppModel::data(const QModelIndex &index, int role) const
 {
+    if (!index.isValid() || index.row() >= m_list.size())
+        return QVariant();
+
     switch(role){
     case AppRole::Display:
         return m_list[index.row()].name;

@@ -53,6 +53,9 @@ void AppSwitcher::showSwitcher(bool forward)
 
     m_current = 0;
 
+    if (!model()->rowCount())
+        return;
+
     int w = 0;
     int h = 0;
     int maxApp = Settings::instance().maxDisplayApps();
