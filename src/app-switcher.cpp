@@ -53,8 +53,10 @@ void AppSwitcher::showSwitcher(bool forward)
 
     m_current = 0;
 
-    if (!model()->rowCount())
+    if (!model()->rowCount()){
+        m_timer->stop();
         return;
+    }
 
     int w = 0;
     int h = 0;
