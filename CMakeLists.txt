@@ -12,9 +12,12 @@ find_package(KF5WindowSystem)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 
+option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
+
 add_definitions("-g -fPIC -Wall -Wextra -pedantic -Wformat=2 -Wnon-virtual-dtor -std=c++11 -Wl,--as-needed -z relro -z defs")
 
-add_executable(${PROJECT_NAME}
+
+set(files
     src/app-switcher.cpp
     src/app-switcher.h
     src/app-model.cpp
@@ -23,6 +26,23 @@ add_executable(${PROJECT_NAME}
     src/app-itemdelegate.h
     src/settings.h
     src/main.cpp
+)
+
+include(LXQtTranslate)
+lxqt_translate_ts(appswitcher-qm
+    UPDATE_TRANSLATIONS ${UPDATE_TRANSLATIONS}
+    SOURCES
+        ${files}
+    INSTALL_DIR
+        "${LXQT_TRANSLATIONS_DIR}/${PROJECT_NAME}"
+    COMPONENT runtime
+)
+lxqt_app_translation_loader(lxqt-appswitcher-qm ${PROJECT_NAME})
+
+add_executable(${PROJECT_NAME}
+    ${files}
+    ${appswitcher-qm}
+    ${lxqt-appswitcher-qm}
 )
 
 target_link_libraries(${PROJECT_NAME}
@@ -37,6 +57,7 @@ add_subdirectory(config)
 install(TARGETS
     ${PROJECT_NAME}
     DESTINATION "${CMAKE_INSTALL_BINDIR}"
+    COMPONENT runtime
 )
 
 install(FILES
