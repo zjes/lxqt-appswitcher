@@ -72,8 +72,8 @@ void AppSwitcher::showSwitcher(bool forward)
     QRect active = QApplication::desktop()->screenGeometry(QCursor::pos());
     move(active.left()+active.width()/2 - width() / 2, active.top()+active.height()/2 - height() / 2);
     selectItem(forward);
-    m_timer->start();
     show();
+    m_timer->start();
 }
 
 void AppSwitcher::selectItem(bool forward)
@@ -101,8 +101,8 @@ void AppSwitcher::activateWindow(WId id)
 void AppSwitcher::keyReleaseEvent(QKeyEvent *event)
 {
     if (event->modifiers() == 0){
-        activateWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
         close();
+        activateWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
     }
     QWidget::keyReleaseEvent(event);
 }
@@ -110,8 +110,8 @@ void AppSwitcher::keyReleaseEvent(QKeyEvent *event)
 void AppSwitcher::timer()
 {
     if (QApplication::queryKeyboardModifiers() == Qt::NoModifier){
-        activateWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
         close();
+        activateWindow(model()->data(model()->index(m_current, 0), AppRole::Window).value<WId>());
     } else {
         m_timer->start();
     }
