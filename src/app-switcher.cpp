@@ -56,9 +56,9 @@ void AppSwitcher::showSwitcher(bool forward)
         return;
 
     QStyleOptionViewItem option;
-    int fontSize = Settings::instance().customFontSize();
     QFont fnt = font();
-    if (fontSize > 0){
+    if (Settings::instance().customFontSizeEnabled()){
+        int fontSize = Settings::instance().customFontSize();
         fnt.setPointSize(fontSize);
         option.font.setPointSize(fontSize);
     } else {

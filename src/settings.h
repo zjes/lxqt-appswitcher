@@ -46,6 +46,12 @@ public:
     void setFilterCurrentScreen(bool filter)
     { m_sets.setValue("filter/current-screen", filter); }
 
+    bool customFontSizeEnabled() const
+    { return m_sets.value("appearance/enable-font-size", 0).toBool(); }
+
+    void setCustomFontSizeEnabled(bool enable)
+    { m_sets.setValue("appearance/enable-font-size", enable); }
+
     int customFontSize() const
     { return m_sets.value("appearance/font-size", 0).toInt();}
 
