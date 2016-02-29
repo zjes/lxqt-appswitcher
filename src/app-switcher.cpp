@@ -55,12 +55,24 @@ void AppSwitcher::showSwitcher(bool forward)
     if (!model()->rowCount())
         return;
 
+    QStyleOptionViewItem option;
+    int fontSize = Settings::instance().customFontSize();
+    QFont fnt = font();
+    if (fontSize > 0){
+        fnt.setPointSize(fontSize);
+        option.font.setPointSize(fontSize);
+    } else {
+        fnt.setPointSize(qApp->font().pointSize());
+        option.font.setPointSize(qApp->font().pointSize());
+    }
+    setFont(fnt);
+
     int w = 0;
     int h = 0;
     int maxApp = Settings::instance().maxDisplayApps();
 
     for(int i = 0; i < model()->rowCount(); ++i){
-        QSize siz = itemDelegate()->sizeHint(QStyleOptionViewItem(), model()->index(i, 0));
+        QSize siz = itemDelegate()->sizeHint(option, model()->index(i, 0));
         w = qMax(w, siz.width());
         h += siz.height();
         if (i > maxApp)

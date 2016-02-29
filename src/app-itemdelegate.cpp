@@ -30,6 +30,8 @@ void AppItemDelegate::paint(QPainter * painter, const QStyleOptionViewItem & opt
         text = text.left(m_maxTextWidth)+"...";
     }
 
+    painter->setFont(option.font);
+
     painter->drawText(
         QRectF(option.rect.left()+m_iconSize+5, option.rect.top()+2, option.rect.width()-m_iconSize-5, m_iconSize),
         Qt::AlignLeft | Qt::AlignVCenter | Qt::TextSingleLine,
@@ -37,9 +39,9 @@ void AppItemDelegate::paint(QPainter * painter, const QStyleOptionViewItem & opt
     );
 }
 
-QSize AppItemDelegate::sizeHint(const QStyleOptionViewItem &/*option*/, const QModelIndex &index) const
+QSize AppItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    QFontMetrics m(qApp->font());
+    QFontMetrics m(option.font);
     QString text = index.model()->data(index, AppRole::Display).toString();
 
     if (text.length() > m_maxTextWidth){
