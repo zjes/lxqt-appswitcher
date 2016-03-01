@@ -36,7 +36,7 @@
     <message>
         <location filename="../config.ui" line="77"/>
         <source>Custom &amp;font size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Výška písma</translation>
     </message>
     <message>
         <location filename="../config.ui" line="87"/>
