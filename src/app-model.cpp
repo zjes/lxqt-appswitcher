@@ -20,7 +20,7 @@ void AppModel::create()
     for(WId wid: KWindowSystem::stackingOrder()){
         KWindowInfo info(wid, NET::WMVisibleName | NET::WMState | NET::XAWMState | NET::WMWindowType);
         NET::WindowType type = info.windowType(NET::AllTypesMask);
-        if((type == NET::Normal || type == NET::Dialog || type == NET::Unknown) && filter(wid, byDesk, byScreen)){
+        if(!info.hasState(NET::SkipTaskbar) && (type == NET::Normal || type == NET::Dialog || type == NET::Unknown) && filter(wid, byDesk, byScreen)){
             m_list.prepend({wid, info.visibleName(), KWindowSystem::icon(wid, iconSize, iconSize, true)});
         }
     }
@@ -51,7 +51,7 @@ bool AppModel::filter(WId window, bool byDesk, bool byScreen) const
 {
     KWindowInfo info(window, NET::WMDesktop | NET::WMFrameExtents);
     if (byDesk){
-        if (KWindowSystem::currentDesktop() != info.desktop())
+        if (KWindowSystem::currentDesktop() != info.desktop() && info.desktop() != NET::OnAllDesktops)
             return false;
     }
 
