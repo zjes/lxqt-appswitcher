@@ -9,3 +9,6 @@ Exec=lxqt-appswitcher
 OnlyShowIn=LXQt;
 X-LXQt-Module=true
 Hidden=true
+
+Name[it]=Scambiafinestre
+Comment[it]=Elenca e scambia le finestre aperte
