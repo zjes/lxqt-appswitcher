@@ -7,6 +7,7 @@ Icon=input-keyboard
 Categories=Qt;Settings;HardwareSettings;DesktopSettings;LXQt;
 OnlyShowIn=LXQt;
 
+Name[de]=Anwendungsumschalter
+Comment[de]=Konfiguration des LXQt Anwendungsumschalters
 Name[it]=Scambiafinestre
 Comment[it]=Configura lo scambiafinestre
-
