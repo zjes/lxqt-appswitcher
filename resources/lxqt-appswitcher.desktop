@@ -10,5 +10,8 @@ OnlyShowIn=LXQt;
 X-LXQt-Module=true
 Hidden=true
 
+Name[de]=Anwendungsumschalter
+GenericName[de]=Anwendungsumschalter
+Comment[de]=Per Tastatur eine Liste laufender Anwendungen anzeigen und zwischen diesen wechseln.
 Name[it]=Scambiafinestre
 Comment[it]=Elenca e scambia le finestre aperte
