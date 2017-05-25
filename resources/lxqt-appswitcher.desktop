@@ -15,3 +15,6 @@ GenericName[de]=Anwendungsumschalter
 Comment[de]=Per Tastatur eine Liste laufender Anwendungen anzeigen und zwischen diesen wechseln.
 Name[it]=Scambiafinestre
 Comment[it]=Elenca e scambia le finestre aperte
+Name[pl]=Przełączanie aplikacji LXQt
+GenericName[pl]=Przełączanie okien
+Comment[pl]=Lista okien, którą możesz wywołać skrótem klawiszowym
