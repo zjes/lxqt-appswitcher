@@ -4,6 +4,8 @@ cmake_policy(VERSION 2.8)
 include(GNUInstallDirs)
 project(lxqt-appswitcher)
 
+set(CMAKE_BUILD_TYPE Release)
+
 find_package(Qt5 COMPONENTS Core Widgets)
 find_package(lxqt)
 find_package(lxqt-globalkeys REQUIRED)
