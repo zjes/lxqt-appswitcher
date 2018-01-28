@@ -1,0 +1,18 @@
+AppSwitcher {
+    background: #2f343f;
+    border-width: 1px;
+    border-color: rgba(39, 44, 53, 85%);
+    border-style: solid;
+
+    color: #FFFFFF;
+    padding: 5px;
+    margin: 0px;
+}
+
+AppSwitcher::item:selected {
+    border-width: 1px;
+    border-color: #272c39;
+    border-style: solid;
+    border-radius: 2px;
+    background: #404552;
+}
