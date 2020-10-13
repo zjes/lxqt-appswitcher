@@ -1,0 +1,91 @@
+IncludeCategories:
+  - Regex:           '^<'
+    Priority:        10
+  - Regex:           '^"'
+    Priority:        1
+
+AlignAfterOpenBracket: DontAlign
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AlignEscapedNewlinesLeft: false
+AlignOperands:   true
+AlignTrailingComments: true
+AlignConsecutiveMacros: true
+AllowAllParametersOfDeclarationOnNextLine: false
+AccessModifierOffset: -4
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakAfterDefinitionReturnType: None
+AllowAllConstructorInitializersOnNextLine: true
+
+AlwaysBreakBeforeMultilineStrings: true
+AlwaysBreakTemplateDeclarations: true
+#AlwaysBreakAfterReturnType: All
+
+BinPackArguments: true
+BinPackParameters: true
+BreakBeforeBinaryOperators: None
+BreakBeforeBraces: Attach
+BreakBeforeTernaryOperators: true
+ColumnLimit: 120
+BreakConstructorInitializers: BeforeComma
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+CommentPragmas:  '^ IWYU pragma:'
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterEnum: true
+  AfterStruct: true
+  AfterClass: true
+  AfterControlStatement: false
+  AfterFunction: true
+  AfterNamespace: false
+  BeforeElse: false
+
+
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth: 4
+Cpp11BracedListStyle: true
+
+DerivePointerAlignment: false
+ExperimentalAutoDetectBinPacking: false
+IndentCaseLabels: false
+IndentWidth:     4
+IndentWrappedFunctionNames: false
+IncludeBlocks: Merge
+KeepEmptyLinesAtTheStartOfBlocks: true
+
+Language: Cpp
+
+MaxEmptyLinesToKeep: 2
+NamespaceIndentation: Inner
+CompactNamespaces: true
+
+PenaltyBreakBeforeFirstCallParameter: 9999999
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 9999999
+PenaltyBreakString: 1000
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 9999999
+
+PointerAlignment: Left
+
+SpaceAfterCStyleCast: false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 1
+SpacesInAngles:  false
+SpacesInCStyleCastParentheses: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+SpaceBeforeCtorInitializerColon: false
+
+Standard:        Cpp11
+TabWidth:        4
+UseTab:          Never
+IndentCaseLabels: true
+
+AllowShortLambdasOnASingleLine: None

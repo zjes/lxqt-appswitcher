@@ -24,13 +24,13 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include <LXQt/Application>
 #include "config.h"
+#include <LXQt/Application>
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     LXQt::Application app(argc, argv);
-    Config conf;
+    Config            conf;
     conf.show();
     return app.exec();
 }

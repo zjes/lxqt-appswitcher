@@ -24,38 +24,43 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include <QDebug>
-#include <QApplication>
-#include <QFile>
-#include <LXQt/lxqtsettings.h>
-#include <LXQt/Application>
-#include "src/app-switcher.h"
 #include "src/settings.h"
+#include <LXQt/Application>
+#include <LXQt/lxqtsettings.h>
+#include <QApplication>
+#include <QDebug>
+#include <QFile>
+
+// Should be after Qt headers
+#include "src/app-switcher.h"
 
 LXQt::LXQtTheme currentTheme()
 {
-    QString themeName = Settings::instance().theme();
-    for(const LXQt::LXQtTheme & theme: LXQt::LXQtTheme::allThemes()){
-        if (theme.name() == themeName)
+    QString themeName = "kvantum";//Settings::instance().theme();
+    qWarning() << "theme name" << themeName;
+    for (const LXQt::LXQtTheme& theme : LXQt::LXQtTheme::allThemes()) {
+        if (theme.name() == themeName) {
+            qWarning() << "a1";
             return theme;
+        }
     }
+    qWarning() << "a2";
     return LXQt::LXQtTheme::currentTheme();
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     LXQt::Application app(argc, argv);
     app.setQuitOnLastWindowClosed(false);
 
     LXQt::LXQtTheme theme = currentTheme();
-    qDebug() << theme.name();
-    if(QFile::exists(theme.path()+"/lxqt-app-switcher.qss")){
-        app.setStyleSheet( "file:///" + theme.path()+"/lxqt-app-switcher.qss");
+    if (QFile::exists(theme.path() + "/lxqt-app-switcher.qss")) {
+        qWarning() << "theme path" << theme.path();
+        app.setStyleSheet("file:///" + theme.path() + "/lxqt-app-switcher.qss");
     }
 
-    QWidget hiddenPreviewParent(0, Qt::Tool);
+    QWidget     hiddenPreviewParent(0, Qt::Tool);
     AppSwitcher switcher(&hiddenPreviewParent);
 
     return app.exec();
 }
-

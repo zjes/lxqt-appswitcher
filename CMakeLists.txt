@@ -16,9 +16,6 @@ set(CMAKE_AUTOMOC ON)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
-add_definitions("-g -fPIC -Wall -Wextra -pedantic -Wformat=2 -Wnon-virtual-dtor -std=c++11 -Wl,--as-needed -z relro -z defs")
-
-
 set(files
     src/app-switcher.cpp
     src/app-switcher.h

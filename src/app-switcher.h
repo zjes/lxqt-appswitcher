@@ -30,25 +30,29 @@
 #include <QVBoxLayout>
 #include <X11/Xlib.h>
 
-namespace GlobalKeyShortcut
-{ class Action; }
+namespace GlobalKeyShortcut {
+class Action;
+}
 
-class AppSwitcher: public QListView
+class AppSwitcher : public QListView
 {
     Q_OBJECT
 public:
-    AppSwitcher(QWidget *parent);
+    AppSwitcher(QWidget* parent);
+
 protected:
-    void keyReleaseEvent(QKeyEvent *event) override;
-    void closeEvent(QCloseEvent *) override;
+    void keyReleaseEvent(QKeyEvent* event) override;
+    void closeEvent(QCloseEvent*) override;
+
 private:
     void showSwitcher(bool forward = true);
     void selectItem(bool forward = true);
     void timer();
     void activateWindow(WId id);
+
 private:
-    GlobalKeyShortcut::Action *m_globalShortcut;
-    GlobalKeyShortcut::Action *m_globalRShortcut;
-    QTimer *m_timer;
-    int m_current = 0;
+    GlobalKeyShortcut::Action* m_globalShortcut;
+    GlobalKeyShortcut::Action* m_globalRShortcut;
+    QTimer*                    m_timer;
+    int                        m_current = 0;
 };

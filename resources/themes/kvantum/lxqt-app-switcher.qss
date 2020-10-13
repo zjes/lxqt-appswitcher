@@ -1,0 +1,20 @@
+AppSwitcher {
+    /*border-width: 1px;
+    border-color: #dedede;
+    border-style: outset;*/
+
+    color: #FFFFFF;
+    padding: 5px;
+    margin: 0px;
+
+    background:qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(100, 100, 100, 80%), stop:0.11 rgba(80, 80, 80, 80%), stop:0.12 rgba(80, 80, 80, 80%), stop:1 rgba(0, 0, 0, 72%));
+    border-radius: 5px;
+}
+
+AppSwitcher::item:selected {
+    border-width: 1px;
+    border-color: #5e5e5e;
+    border-style: solid;
+    border-radius: 5px;
+    background-color:qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #3a5f84, stop:0.31 #345372, stop:0.32 #2e4964, stop:1 #4584be);
+}
