@@ -36,15 +36,12 @@
 
 LXQt::LXQtTheme currentTheme()
 {
-    QString themeName = "kvantum";//Settings::instance().theme();
-    qWarning() << "theme name" << themeName;
+    QString themeName = Settings::instance().theme();
     for (const LXQt::LXQtTheme& theme : LXQt::LXQtTheme::allThemes()) {
         if (theme.name() == themeName) {
-            qWarning() << "a1";
             return theme;
         }
     }
-    qWarning() << "a2";
     return LXQt::LXQtTheme::currentTheme();
 }
 
@@ -55,7 +52,6 @@ int main(int argc, char* argv[])
 
     LXQt::LXQtTheme theme = currentTheme();
     if (QFile::exists(theme.path() + "/lxqt-app-switcher.qss")) {
-        qWarning() << "theme path" << theme.path();
         app.setStyleSheet("file:///" + theme.path() + "/lxqt-app-switcher.qss");
     }
 
