@@ -6,7 +6,7 @@
     <message>
         <location filename="../config.ui" line="14"/>
         <source>LXQt Application Switcher Configuration</source>
-        <translation>Preferenze scambiafinestre </translation>
+        <translation>Preferenze scambiafinestre</translation>
     </message>
     <message>
         <location filename="../config.ui" line="20"/>
