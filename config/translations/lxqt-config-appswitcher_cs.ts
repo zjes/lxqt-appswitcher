@@ -16,7 +16,7 @@
     <message>
         <location filename="../config.ui" line="26"/>
         <source>Icons &amp;size</source>
-        <translation type="unfinished">Velikost &amp;ikon</translation>
+        <translation>Velikost &amp;ikon</translation>
     </message>
     <message>
         <location filename="../config.ui" line="36"/>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../config.ui" line="43"/>
         <source>Max &amp;items to show</source>
-        <translation type="unfinished">Maximum &amp;položek k zobrazení</translation>
+        <translation>Nejvíce zobrazených &amp;položek</translation>
     </message>
     <message>
         <location filename="../config.ui" line="60"/>
         <source>Max text &amp;length</source>
-        <translation type="unfinished">Max &amp;délka textu</translation>
+        <translation>Největší &amp;délka textu</translation>
     </message>
     <message>
         <location filename="../config.ui" line="77"/>
@@ -46,12 +46,12 @@
     <message>
         <location filename="../config.ui" line="109"/>
         <source>Filter by &amp;desktop</source>
-        <translation type="unfinished">Filtrovat podle &amp;plochy</translation>
+        <translation>Filtrovat podle &amp;plochy</translation>
     </message>
     <message>
         <location filename="../config.ui" line="116"/>
         <source>Filter by s&amp;creen</source>
-        <translation type="unfinished">Filtrovat podle o&amp;brazovky</translation>
+        <translation>Filtrovat podle o&amp;brazovky</translation>
     </message>
     <message>
         <location filename="../config.ui" line="103"/>

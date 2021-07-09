@@ -6,12 +6,12 @@
     <message>
         <location filename="../src/app-switcher.cpp" line="21"/>
         <source>Switch applications</source>
-        <translation type="unfinished">Přepínání aplikací</translation>
+        <translation>Přepínání aplikací</translation>
     </message>
     <message>
         <location filename="../src/app-switcher.cpp" line="22"/>
         <source>Reverse switch applications</source>
-        <translation type="unfinished">Reverzní přepínání aplikací</translation>
+        <translation>Reverzní přepínání aplikací</translation>
     </message>
 </context>
 </TS>
