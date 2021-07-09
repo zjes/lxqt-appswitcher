@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<TS version="2.1" language="fr">
 <context>
     <name>Config</name>
     <message>
         <location filename="../config.ui" line="14"/>
         <source>LXQt Application Switcher Configuration</source>
-        <translation>LXQt nastavení přepínání aplikací</translation>
+        <translation>Configuration du Changeur de tâches LXQt</translation>
     </message>
     <message>
         <location filename="../config.ui" line="20"/>
         <source>Appearance:</source>
-        <translation>Vzhled:</translation>
+        <translation>Apparence :</translation>
     </message>
     <message>
         <location filename="../config.ui" line="26"/>
         <source>Icons &amp;size</source>
-        <translation>Velikost &amp;ikon</translation>
+        <translation>&amp;Taille des icônes</translation>
     </message>
     <message>
         <location filename="../config.ui" line="36"/>
@@ -26,17 +26,17 @@
     <message>
         <location filename="../config.ui" line="43"/>
         <source>Max &amp;items to show</source>
-        <translation>Nejvíce zobrazených &amp;položek</translation>
+        <translation>Maxi d&apos;&amp;Eléments affichés</translation>
     </message>
     <message>
         <location filename="../config.ui" line="60"/>
         <source>Max text &amp;length</source>
-        <translation>Největší &amp;délka textu</translation>
+        <translation>&amp;Longueur max du texte</translation>
     </message>
     <message>
         <location filename="../config.ui" line="77"/>
         <source>Custom &amp;font size</source>
-        <translation>Velikost &amp;písma</translation>
+        <translation>Taille de &amp;police personnalisée</translation>
     </message>
     <message>
         <location filename="../config.ui" line="87"/>
@@ -44,19 +44,19 @@
         <translation> pt</translation>
     </message>
     <message>
+        <location filename="../config.ui" line="103"/>
+        <source>Filters:</source>
+        <translation>Filtres :</translation>
+    </message>
+    <message>
         <location filename="../config.ui" line="109"/>
         <source>Filter by &amp;desktop</source>
-        <translation>Filtrovat podle &amp;plochy</translation>
+        <translation>Filtrer par &amp;bureau</translation>
     </message>
     <message>
         <location filename="../config.ui" line="116"/>
         <source>Filter by s&amp;creen</source>
-        <translation>Filtrovat podle o&amp;brazovky</translation>
-    </message>
-    <message>
-        <location filename="../config.ui" line="103"/>
-        <source>Filters:</source>
-        <translation>Filtry:</translation>
+        <translation>Filtrer par é&amp;cran</translation>
     </message>
 </context>
 </TS>
