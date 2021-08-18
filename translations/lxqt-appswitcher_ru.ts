@@ -6,12 +6,12 @@
     <message>
         <location filename="../src/app-switcher.cpp" line="21"/>
         <source>Switch applications</source>
-        <translation type="unfinished">Переключение между программами</translation>
+        <translation>Переключение приложений</translation>
     </message>
     <message>
         <location filename="../src/app-switcher.cpp" line="22"/>
         <source>Reverse switch applications</source>
-        <translation type="unfinished">Переключение между программами в обратном направлении</translation>
+        <translation>Реверсировать переключение приложений</translation>
     </message>
 </context>
 </TS>
