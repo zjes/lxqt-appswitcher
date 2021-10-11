@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="lv">
+<TS version="2.1" language="hr">
 <context>
     <name>Config</name>
     <message>
         <location filename="../config.ui" line="14"/>
         <source>LXQt Application Switcher Configuration</source>
-        <translation>LXQt lietotņu pārslēga konfigurēšana</translation>
+        <translation>LXQt Prebacivanje između programa – Konfiguracija</translation>
     </message>
     <message>
         <location filename="../config.ui" line="20"/>
         <source>Appearance:</source>
-        <translation>Paskats:</translation>
+        <translation>Izgled:</translation>
     </message>
     <message>
         <location filename="../config.ui" line="26"/>
         <source>Icons &amp;size</source>
-        <translation>Ikonu &amp;izmērs</translation>
+        <translation>&amp;Veličina ikona</translation>
     </message>
     <message>
         <location filename="../config.ui" line="36"/>
         <source> px</source>
-        <translation> pikseļi</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location filename="../config.ui" line="43"/>
         <source>Max &amp;items to show</source>
-        <translation>Max &amp;gab rādīt</translation>
+        <translation>Maks. broj prikazanih &amp;elemenata</translation>
     </message>
     <message>
         <location filename="../config.ui" line="60"/>
         <source>Max text &amp;length</source>
-        <translation>Maksimālais teksta &amp;garums</translation>
+        <translation>Maks. &amp;duljina teksta</translation>
     </message>
     <message>
         <location filename="../config.ui" line="77"/>
         <source>Custom &amp;font size</source>
-        <translation>Pielāgotais &amp;šrifta izmērs</translation>
+        <translation>Prilagođena veličina &amp;fonta</translation>
     </message>
     <message>
         <location filename="../config.ui" line="87"/>
         <source> pt</source>
-        <translation> punkti</translation>
+        <translation> pt</translation>
     </message>
     <message>
         <location filename="../config.ui" line="103"/>
@@ -51,12 +51,12 @@
     <message>
         <location filename="../config.ui" line="109"/>
         <source>Filter by &amp;desktop</source>
-        <translation>Filtrēt/atlasīt pēc &amp;darbvirsmas</translation>
+        <translation>Filtriraj po &amp;radnoj površini</translation>
     </message>
     <message>
         <location filename="../config.ui" line="116"/>
         <source>Filter by s&amp;creen</source>
-        <translation>Filtrēt/atlasīt pēc e&amp;krāna</translation>
+        <translation>Filtriraj po e&amp;kranu</translation>
     </message>
 </context>
 </TS>
