@@ -16,7 +16,7 @@
     <message>
         <location filename="../config.ui" line="26"/>
         <source>Icons &amp;size</source>
-        <translation>Tamanho dos ícones</translation>
+        <translation>Tamanho dos ícone&amp;s</translation>
     </message>
     <message>
         <location filename="../config.ui" line="36"/>
@@ -31,12 +31,12 @@
     <message>
         <location filename="../config.ui" line="60"/>
         <source>Max text &amp;length</source>
-        <translation>Comprimento máximo do texto</translation>
+        <translation>Comprimento máximo do te&amp;xto</translation>
     </message>
     <message>
         <location filename="../config.ui" line="77"/>
         <source>Custom &amp;font size</source>
-        <translation>Tamanho de letra personalizado</translation>
+        <translation>&amp;Tamanho de letra personalizado</translation>
     </message>
     <message>
         <location filename="../config.ui" line="87"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../config.ui" line="109"/>
         <source>Filter by &amp;desktop</source>
-        <translation>Filtrar por área de trabalho</translation>
+        <translation>Filtrar por área &amp;de trabalho</translation>
     </message>
     <message>
         <location filename="../config.ui" line="116"/>
