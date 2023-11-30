@@ -1,10 +1,8 @@
 cmake_minimum_required(VERSION 2.8.11)
 cmake_policy(VERSION 2.8)
 
-include(GNUInstallDirs)
 project(lxqt-appswitcher)
-
-set(CMAKE_BUILD_TYPE Release)
+include(GNUInstallDirs)
 
 find_package(Qt5 COMPONENTS Core Widgets)
 find_package(lxqt)
