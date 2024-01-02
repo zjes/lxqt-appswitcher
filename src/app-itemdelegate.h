@@ -39,6 +39,6 @@ protected:
     virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
 
 private:
-    int m_iconSize;
+    int m_iconSize = 32;
     int m_maxTextWidth = 0;
 };

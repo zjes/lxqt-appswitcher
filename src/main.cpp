@@ -51,11 +51,11 @@ int main(int argc, char* argv[])
     app.setQuitOnLastWindowClosed(false);
 
     LXQt::LXQtTheme theme = currentTheme();
-    if (QFile::exists(theme.path() + "/lxqt-app-switcher.qss")) {
-        app.setStyleSheet("file:///" + theme.path() + "/lxqt-app-switcher.qss");
+    if (QFile::exists(theme.path() + QLatin1String("/lxqt-app-switcher.qss"))) {
+        app.setStyleSheet(QLatin1String("file:///%1/lxqt-app-switcher.qss").arg(theme.path()));
     }
 
-    QWidget     hiddenPreviewParent(0, Qt::Tool);
+    QWidget     hiddenPreviewParent(nullptr, Qt::Tool);
     AppSwitcher switcher(&hiddenPreviewParent);
 
     return app.exec();
