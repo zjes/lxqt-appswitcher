@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="si">
+<TS version="2.1" language="fi">
 <context>
     <name>Config</name>
     <message>
         <location filename="../config.ui" line="14"/>
         <source>LXQt Application Switcher Configuration</source>
-        <translation type="unfinished">LXQt යෙදුම් වෙනස්කරු වින්‍යාසය</translation>
+        <translation>LXQt:n sovellusvaihtajan asetukset</translation>
     </message>
     <message>
         <location filename="../config.ui" line="20"/>
         <source>Appearance:</source>
-        <translation type="unfinished">පෙනුම:</translation>
+        <translation>Ulkoasu:</translation>
     </message>
     <message>
         <location filename="../config.ui" line="26"/>
         <source>Icons &amp;size</source>
-        <translation type="unfinished">අයිකන &amp;ප්රමාණ</translation>
+        <translation>K&amp;uvakekoko</translation>
     </message>
     <message>
         <location filename="../config.ui" line="36"/>
@@ -26,37 +26,37 @@
     <message>
         <location filename="../config.ui" line="43"/>
         <source>Max &amp;items to show</source>
-        <translation type="unfinished">පෙට්ටිය පෙන්වීමට උපරිම &amp;අයිතම</translation>
+        <translation>&amp;Kohteiden määräraja</translation>
     </message>
     <message>
         <location filename="../config.ui" line="60"/>
         <source>Max text &amp;length</source>
-        <translation type="unfinished">පෙළ උපරිම &amp;දිගට</translation>
+        <translation>T&amp;ekstin pituusraja</translation>
     </message>
     <message>
         <location filename="../config.ui" line="77"/>
         <source>Custom &amp;font size</source>
-        <translation type="unfinished">ස්වාදය අරිමින් &amp;ප්‍රමාණයක්</translation>
+        <translation>&amp;Fonttikoko</translation>
     </message>
     <message>
         <location filename="../config.ui" line="87"/>
         <source> pt</source>
-        <translation type="unfinished"> pt</translation>
+        <translation> pt</translation>
     </message>
     <message>
         <location filename="../config.ui" line="103"/>
         <source>Filters:</source>
-        <translation>පෙරහන්:</translation>
+        <translation>Suodattimet:</translation>
     </message>
     <message>
         <location filename="../config.ui" line="109"/>
         <source>Filter by &amp;desktop</source>
-        <translation type="unfinished">ඩෙස්ක්ටොප් වෙතින් පෙරීම</translation>
+        <translation>Suodata &amp;työpöydät</translation>
     </message>
     <message>
         <location filename="../config.ui" line="116"/>
         <source>Filter by s&amp;creen</source>
-        <translation type="unfinished">Filter by s&amp;creen</translation>
+        <translation>Suodata &amp;näytöt</translation>
     </message>
 </context>
 </TS>

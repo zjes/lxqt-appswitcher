@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="si">
+<TS version="2.1" language="ca">
 <context>
     <name>Config</name>
     <message>
         <location filename="../config.ui" line="14"/>
         <source>LXQt Application Switcher Configuration</source>
-        <translation type="unfinished">LXQt යෙදුම් වෙනස්කරු වින්‍යාසය</translation>
+        <translation>Configuració del commutador d&apos;aplicacions LXQt</translation>
     </message>
     <message>
         <location filename="../config.ui" line="20"/>
         <source>Appearance:</source>
-        <translation type="unfinished">පෙනුම:</translation>
+        <translation>Aparença:</translation>
     </message>
     <message>
         <location filename="../config.ui" line="26"/>
         <source>Icons &amp;size</source>
-        <translation type="unfinished">අයිකන &amp;ප්රමාණ</translation>
+        <translation>Mida de&amp; les icones</translation>
     </message>
     <message>
         <location filename="../config.ui" line="36"/>
         <source> px</source>
-        <translation> px</translation>
+        <translation> píxels</translation>
     </message>
     <message>
         <location filename="../config.ui" line="43"/>
         <source>Max &amp;items to show</source>
-        <translation type="unfinished">පෙට්ටිය පෙන්වීමට උපරිම &amp;අයිතම</translation>
+        <translation>Màxim &amp;d&apos;elements a mostrar</translation>
     </message>
     <message>
         <location filename="../config.ui" line="60"/>
         <source>Max text &amp;length</source>
-        <translation type="unfinished">පෙළ උපරිම &amp;දිගට</translation>
+        <translation>&amp;Longitud màxima del text</translation>
     </message>
     <message>
         <location filename="../config.ui" line="77"/>
         <source>Custom &amp;font size</source>
-        <translation type="unfinished">ස්වාදය අරිමින් &amp;ප්‍රමාණයක්</translation>
+        <translation>Mida del &amp;tipus de lletra personalitzat</translation>
     </message>
     <message>
         <location filename="../config.ui" line="87"/>
         <source> pt</source>
-        <translation type="unfinished"> pt</translation>
+        <translation> pt</translation>
     </message>
     <message>
         <location filename="../config.ui" line="103"/>
         <source>Filters:</source>
-        <translation>පෙරහන්:</translation>
+        <translation>Filtres:</translation>
     </message>
     <message>
         <location filename="../config.ui" line="109"/>
         <source>Filter by &amp;desktop</source>
-        <translation type="unfinished">ඩෙස්ක්ටොප් වෙතින් පෙරීම</translation>
+        <translation>Filtra per &amp;escriptori</translation>
     </message>
     <message>
         <location filename="../config.ui" line="116"/>
         <source>Filter by s&amp;creen</source>
-        <translation type="unfinished">Filter by s&amp;creen</translation>
+        <translation>Filtra per &amp;pantalla</translation>
     </message>
 </context>
 </TS>
