@@ -35,7 +35,8 @@
 #include <QKeyEvent>
 #include <QScreen>
 #include <QTimer>
-#include <kwindowsystem.h>
+#include <KX11Extras>
+#include <KWindowInfo>
 
 // Should be after Qt headers
 #include "app-switcher.h"
@@ -140,11 +141,11 @@ void AppSwitcher::activateWindow(WId id)
 {
     KWindowInfo info(id, NET::WMDesktop);
 
-    if (KWindowSystem::currentDesktop() != info.desktop()) {
-        KWindowSystem::setCurrentDesktop(info.desktop());
+    if (KX11Extras::currentDesktop() != info.desktop()) {
+        KX11Extras::setCurrentDesktop(info.desktop());
     }
 
-    KWindowSystem::forceActiveWindow(id);
+    KX11Extras::forceActiveWindow(id);
 }
 
 void AppSwitcher::keyReleaseEvent(QKeyEvent* event)

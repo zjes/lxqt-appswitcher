@@ -31,7 +31,7 @@
 
 struct AppInfo
 {
-    WId     windowId;
+    WId     windowId = 0;
     QString name;
     QPixmap pixmap;
 };

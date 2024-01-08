@@ -30,7 +30,8 @@
 #include <QDebug>
 #include <QDesktopWidget>
 #include <QScreen>
-#include <kwindowsystem.h>
+#include <KX11Extras>
+#include <KWindowInfo>
 
 AppModel::AppModel(QObject* parent)
     : QAbstractListModel(parent)
@@ -44,12 +45,12 @@ void AppModel::create()
     bool byDesk   = Settings::instance().filterCurrentDesktop();
     bool byScreen = Settings::instance().filterCurrentScreen();
 
-    for (WId wid : KWindowSystem::stackingOrder()) {
+    for (WId wid : KX11Extras::stackingOrder()) {
         KWindowInfo     info(wid, NET::WMVisibleName | NET::WMState | NET::XAWMState | NET::WMWindowType);
         NET::WindowType type = info.windowType(NET::AllTypesMask);
         if (!info.hasState(NET::SkipTaskbar) && (type == NET::Normal || type == NET::Dialog || type == NET::Unknown) &&
             filter(wid, byDesk, byScreen)) {
-            m_list.prepend({wid, info.visibleName(), KWindowSystem::icon(wid, iconSize, iconSize, true)});
+            m_list.prepend({wid, info.visibleName(), KX11Extras::icon(wid, iconSize, iconSize, true)});
         }
     }
 }
@@ -79,7 +80,7 @@ bool AppModel::filter(WId window, bool byDesk, bool byScreen) const
 {
     KWindowInfo info(window, NET::WMDesktop | NET::WMFrameExtents);
     if (byDesk) {
-        if (KWindowSystem::currentDesktop() != info.desktop() && info.desktop() != NET::OnAllDesktops) {
+        if (KX11Extras::currentDesktop() != info.desktop() && info.desktop() != NET::OnAllDesktops) {
             return false;
         }
     }
