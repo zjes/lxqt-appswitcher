@@ -6,7 +6,7 @@
     <message>
         <location filename="../config.ui" line="14"/>
         <source>LXQt Application Switcher Configuration</source>
-        <translation>Konfiguracja przełącznika aplikacji LXQt</translation>
+        <translation>Konfiguracja przełącznika programów LXQt</translation>
     </message>
     <message>
         <location filename="../config.ui" line="20"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../config.ui" line="60"/>
         <source>Max text &amp;length</source>
-        <translation>Maksyma&amp;lna długośgc tekstu</translation>
+        <translation>Maksyma&amp;lna długość tekstu</translation>
     </message>
     <message>
         <location filename="../config.ui" line="77"/>
