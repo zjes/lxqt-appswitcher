@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="pl">
+<TS version="2.1" language="el">
 <context>
     <name>Config</name>
     <message>
         <location filename="../config.ui" line="14"/>
         <source>LXQt Application Switcher Configuration</source>
-        <translation>Konfiguracja przełącznika programów LXQt</translation>
+        <translation>Διαμόρφωση εναλλαγής εφαρμογών LXQt</translation>
     </message>
     <message>
         <location filename="../config.ui" line="20"/>
         <source>Appearance:</source>
-        <translation>Wygląd:</translation>
+        <translation>Εμφάνιση:</translation>
     </message>
     <message>
         <location filename="../config.ui" line="26"/>
         <source>Icons &amp;size</source>
-        <translation>Rozmiar &amp;ikon</translation>
+        <translation>Εικονίδια &amp;μέγεθος</translation>
     </message>
     <message>
         <location filename="../config.ui" line="36"/>
         <source> px</source>
-        <translation> pikseli</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location filename="../config.ui" line="43"/>
         <source>Max &amp;items to show</source>
-        <translation>Maksymalna l&amp;iczba elementów do wyświetlenia</translation>
+        <translation>Μέγιστο &amp;αντικείμενα προς εμφάνιση</translation>
     </message>
     <message>
         <location filename="../config.ui" line="60"/>
         <source>Max text &amp;length</source>
-        <translation>Maksyma&amp;lna długość tekstu</translation>
+        <translation>Μέγιστο κειμένου &amp;μήκος</translation>
     </message>
     <message>
         <location filename="../config.ui" line="77"/>
         <source>Custom &amp;font size</source>
-        <translation>Własny rozmiar &amp;czcionki</translation>
+        <translation>Εξατομίκευση &amp;μέγεθος γραμματοσειράς</translation>
     </message>
     <message>
         <location filename="../config.ui" line="87"/>
         <source> pt</source>
-        <translation> punktów</translation>
+        <translation> pt</translation>
     </message>
     <message>
         <location filename="../config.ui" line="103"/>
         <source>Filters:</source>
-        <translation>Filtry:</translation>
+        <translation>Φίλτρα:</translation>
     </message>
     <message>
         <location filename="../config.ui" line="109"/>
         <source>Filter by &amp;desktop</source>
-        <translation>Filtruj we&amp;dług pulpitu</translation>
+        <translation>Φιλτράρισμα με &amp;επιφάνεια εργασίας</translation>
     </message>
     <message>
         <location filename="../config.ui" line="116"/>
         <source>Filter by s&amp;creen</source>
-        <translation>Filtruj według e&amp;kranu</translation>
+        <translation>Φιλτράρισμα με s&amp;οθόνη</translation>
     </message>
 </context>
 </TS>
