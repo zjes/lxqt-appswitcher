@@ -28,7 +28,6 @@
 #include "settings.h"
 #include <QApplication>
 #include <QDebug>
-#include <QDesktopWidget>
 #include <QScreen>
 #include <KX11Extras>
 #include <KWindowInfo>

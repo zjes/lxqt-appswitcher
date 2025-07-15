@@ -1,13 +1,13 @@
-cmake_minimum_required(VERSION 2.8.11)
-cmake_policy(VERSION 2.8)
+cmake_minimum_required(VERSION 3.8.0)
+cmake_policy(VERSION 3.8)
 
 project(lxqt-appswitcher)
 include(GNUInstallDirs)
 
-find_package(Qt5 COMPONENTS Core Widgets)
+find_package(Qt6 COMPONENTS Core Widgets)
 find_package(lxqt)
 find_package(lxqt-globalkeys REQUIRED)
-find_package(KF5WindowSystem)
+find_package(KF6WindowSystem)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
@@ -43,8 +43,8 @@ add_executable(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME}
-    Qt5::Core
-    Qt5::Widgets
+    Qt6::Core
+    Qt6::Widgets
     lxqt
     lxqt-globalkeys
 )

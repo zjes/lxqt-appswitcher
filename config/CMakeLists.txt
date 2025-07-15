@@ -1,4 +1,4 @@
-qt5_wrap_ui(uic
+qt6_wrap_ui(uic
     config.ui
 )
 
@@ -31,8 +31,8 @@ add_executable(lxqt-config-appswitcher
 )
 
 target_link_libraries(lxqt-config-appswitcher
-    Qt5::Core
-    Qt5::Widgets
+    Qt6::Core
+    Qt6::Widgets
     lxqt
 )
 

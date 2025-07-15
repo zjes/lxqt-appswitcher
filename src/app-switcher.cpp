@@ -31,7 +31,7 @@
 #include <LXQtGlobalKeys/Client>
 #include <QApplication>
 #include <QDebug>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QKeyEvent>
 #include <QScreen>
 #include <QTimer>
